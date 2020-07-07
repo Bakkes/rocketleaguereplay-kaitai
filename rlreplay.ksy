@@ -80,7 +80,17 @@ types:
             "'OnlinePlatform_Steam'": dummy
             "'OnlinePlatform_PS4'": dummy
             _: ustring
-    
+  
+  bool_property:
+    seq:
+      - id: value
+        type:
+          switch-on: _root.engine_version == 0 and _root.licensee_version == 0 and _root.net_version == 0
+          cases:
+            true: u4
+            false: u1
+
+  
   property_value:
     seq:
       - id: property_type
@@ -99,7 +109,7 @@ types:
             '"NameProperty"': ustring
             '"StrProperty"': ustring
             '"ByteProperty"': byte_property
-            '"BoolProperty"': u1
+            '"BoolProperty"': bool_property
             '"QWordProperty"': u8
             '"FloatProperty"': f4
             '"ArrayProperty"': array_property

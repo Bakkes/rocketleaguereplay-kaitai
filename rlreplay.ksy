@@ -64,7 +64,7 @@ types:
         doc: the length of the string. if the length is negative, it's an Unicode string
       - id: content
         type: str
-        size: len < 0 ? (-(len - 1))*2 : len-1
+        size: len < 0 ? (-len)*2 : len
         encoding: UTF-8
         terminator: 0
     

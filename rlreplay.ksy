@@ -64,7 +64,7 @@ types:
         doc: the length of the string. if the length is negative, it's an Unicode string
       - id: content
         type: str
-        size: len < 0 ? (-len)*2 : len
+        size: 'len < 0 ? ((-len)*2) : (len)'
         encoding: UTF-8
         terminator: 0
     
@@ -84,7 +84,7 @@ types:
     seq:
       - id: value
         type:
-          switch-on: _root.engine_version == 0 and _root.licensee_version == 0 and _root.net_version == 0
+          switch-on: '_root.engine_version == 0 and _root.licensee_version == 0 and _root.net_version == 0'
           cases:
             true: u4
             false: u1

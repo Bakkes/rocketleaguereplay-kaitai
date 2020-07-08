@@ -66,8 +66,7 @@ types:
         type: str
         size: len < 0 ? (-(len - 1))*2 : len-1
         encoding: UTF-8
-      - id: null_terminator
-        size: len < 0 ? 2 : 1
+        terminator: 0
     
   byte_property:
     seq:
